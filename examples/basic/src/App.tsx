@@ -1,4 +1,4 @@
-import { Routes, Route, Outlet, Link } from "react-router-dom";
+import { BrowserRouter as Router,Routes, Route, Outlet, Link } from "react-router-dom";
 
 export default function App() {
   return (
@@ -16,6 +16,7 @@ export default function App() {
       {/* Routes nest inside one another. Nested route paths build upon
             parent route paths, and nested route elements render inside
             parent route elements. See the note about <Outlet> below. */}
+      <Router>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -28,6 +29,7 @@ export default function App() {
           <Route path="*" element={<NoMatch />} />
         </Route>
       </Routes>
+      </Router>
     </div>
   );
 }
